@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="International Journal of Multidisciplinary Science, Engineering and Technology - IJMSET">
+    <meta name="keywords" content="IJMSET, International Journal, Multidisciplinary, Science, Engineering, Technology, Research">
+    <meta name="author" content="International Journal of Multidisciplinary Science, Engineering and Technology">
+
+    <title>IJMSET | International Journal of Multidisciplinary Science, Engineering and Technology</title>
+
+    <!-- Favicon / Tab Icon -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f7f9fc;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            background: #102a43;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* HEADER */
+        .main-header {
+            background: white;
+            padding: 18px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .journal-title {
+            font-size: 27px;
+            font-weight: 700;
+            color: #123b5d;
+            line-height: 1.2;
+        }
+
+        .journal-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .logo-img-header {
+            max-width: 95px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .logo-img-nav {
+            height: 35px;
+            width: auto;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #123b5d !important;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            font-size: 15px;
+            padding: 14px 16px !important;
+        }
+
+        .navbar .nav-link:hover {
+            background: #0d2c45;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(18,59,93,.90), rgba(18,59,93,.90)), url("images/research-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 75px 0;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 850px;
+            margin: 20px auto;
+            line-height: 1.7;
+        }
+
+        .btn-primary-custom {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            background: #d68910;
+            color: white;
+        }
+
+        .btn-outline-custom {
+            border: 1px solid white;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            margin-left: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: #123b5d;
+        }
+
+        /* JOURNAL INFO */
+        .info-section {
+            margin-top: -35px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+            height: 100%;
+        }
+
+        .info-card i {
+            font-size: 30px;
+            color: #f39c12;
+        }
+
+        .info-card h5 {
+            margin-top: 10px;
+            color: #123b5d;
+            font-weight: 700;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #123b5d;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* ABOUT */
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.06);
+            height: 100%;
+        }
+
+        .about-box h3 {
+            color: #123b5d;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* EDITORIAL BOARD */
+        .editorial-box {
+            background: white;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.06);
+            height: 100%;
+            border-top: 4px solid #123b5d;
+        }
+
+        .editorial-box h3 {
+            color: #123b5d;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .editor-group-title {
+            color: #f39c12;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .editor-item {
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .editor-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .editor-name {
+            font-weight: 700;
+            color: #222;
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .editor-affil {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* RESEARCH AREAS */
+        .research-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border-left: 4px solid #f39c12;
+            box-shadow: 0 3px 12px rgba(0,0,0,.05);
+            height: 100%;
+        }
+
+        .research-card i {
+            font-size: 30px;
+            color: #123b5d;
+        }
+
+        .research-card h5 {
+            margin-top: 15px;
+            color: #123b5d;
+        }
+
+        /* SUBMISSION */
+        .submission-section {
+            background: #123b5d;
+            color: white;
+            padding: 65px 0;
+        }
+
+        .submission-section h2 {
+            font-weight: 700;
+        }
+
+        /* LATEST ARTICLES */
+        .article-card {
+            background: white;
+            border-radius: 7px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.06);
+        }
+
+        .article-card h5 {
+            color: #123b5d;
+            font-weight: 600;
+        }
+
+        .article-meta {
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0b1f30;
+            color: #ddd;
+            padding: 55px 0 20px;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #294155;
+            margin-top: 35px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            .journal-title {
+                font-size: 20px;
+            }
+
+            .logo-img-header {
+                max-width: 70px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .btn-outline-custom {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div>
+                <i class="bi bi-envelope"></i> editor@ijmset.org
+            </div>
+            <div>
+                <a href="#submit">Author Login</a>
+                <a href="#submit">Submit Paper</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-2 text-center text-md-start mb-2 mb-md-0">
+                <img src="logo.png" alt="logo" class="logo-img-header">
+            </div>
+            <div class="col-md-10 text-center text-md-start">
+                <div class="journal-title">
+                    International Journal of Multidisciplinary Science, Engineering and Technology
+                </div>
+                <div class="journal-subtitle">
+                    <strong>IJMSET</strong> &nbsp; | &nbsp; International Peer-Reviewed Open Access Journal
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+            <img src="logo.png" alt="logo" class="logo-img-nav">
+            <span>IJMSET</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aim-scope">Aim & Scope</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#editorial-board">Editorial Board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#research-areas">Research Areas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#submit">For Authors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#articles">Archives</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container text-center">
+        <h1>International Journal of Multidisciplinary Science, Engineering and Technology</h1>
+        <p>IJMSET provides an international platform for researchers, academicians, scientists, engineers and professionals to disseminate innovative research and interdisciplinary knowledge.</p>
+        <div>
+            <a href="#submit" class="btn btn-primary-custom">
+                <i class="bi bi-upload"></i> Submit Manuscript
+            </a>
+            <a href="#articles" class="btn btn-outline-custom">Current Issue</a>
+        </div>
+    </div>
+</section>
+
+<!-- JOURNAL INFORMATION -->
+<section class="info-section">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <div class="info-card">
+                    <i class="bi bi-journal-bookmark"></i>
+                    <h5>ISSN</h5>
+                    <p>To be assigned</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-card">
+                    <i class="bi bi-globe"></i>
+                    <h5>Frequency</h5>
+                    <p>Monthly</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-card">
+                    <i class="bi bi-search"></i>
+                    <h5>Peer Review</h5>
+                    <p>Double Blind</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-card">
+                    <i class="bi bi-unlock"></i>
+                    <h5>Access</h5>
+                    <p>Open Access</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT & AIM & SCOPE -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>About IJMSET</h2>
+            <p>Advancing interdisciplinary research and innovation</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="about-box">
+                    <h3>About the Journal</h3>
+                    <p>The International Journal of Multidisciplinary Science, Engineering and Technology (IJMSET) is an international peer-reviewed open access journal dedicated to promoting high-quality research across multidisciplinary areas of science, engineering, technology and related disciplines.</p>
+                    <p>The journal encourages original research articles, review papers, case studies, technical notes and interdisciplinary research.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6" id="aim-scope">
+                <div class="about-box">
+                    <h3>Our Mission & Scope</h3>
+                    <p>IJMSET serves as a global forum for advancing knowledge at the intersection of science, engineering and technology. It welcomes innovative research that transcends conventional disciplinary boundaries, fosters meaningful collaboration, and transforms scientific discoveries and technological advances into impactful solutions for a rapidly evolving world.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDITORIAL BOARD -->
+<section id="editorial-board" class="section bg-white">
+    <div class="container">
+        <div class="section-title">
+            <h2>Editorial Board</h2>
+            <p>Distinguished members governing our peer-review and publication process</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Chief Editor -->
+            <div class="col-md-6">
+                <div class="editorial-box">
+                    <div class="editor-group-title">
+                        <i class="bi bi-person-badge me-2"></i>Chief Editors
+                    </div>
+                    
+                    <div class="editor-item">
+                        <div class="editor-name">Anuj Verma</div>
+                        <div class="editor-affil">Rajshree Institute of Management & Technology, Bareilly (UP)</div>
+                    </div>
+  <div class="editor-item">
+                        <div class="editor-name">Akash Singh</div>
+                        <div class="editor-affil">Rajshree Institute of Management & Technology, Bareilly (UP)</div>
+                    </div>
+                    <div class="editor-item">
+                        <div class="editor-name">Rajat Kumar Kannaujia</div>
+                        <div class="editor-affil">Rajshree Institute of Management & Technology, Bareilly (UP)</div>
+                    </div>
+                    <div class="editor-item">
+                        <div class="editor-name">Rahul Chaudhary</div>
+                        <div class="editor-affil">Rajshree Institute of Management & Technology, Bareilly (UP)</div>
+                    </div>
+                    <div class="editor-item">
+                        <div class="editor-name">Anuradha Rajput</div>
+                        <div class="editor-affil">Jawahar Lal Nehru University, New Delhi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editors -->
+            <div class="col-md-6">
+                <div class="editorial-box">
+                    <div class="editor-group-title">
+                        <i class="bi bi-people me-2"></i>Editors
+                    </div>
+
+                    <div class="editor-item">
+                        <div class="editor-name">Anjali Rajput</div>
+                    </div>
+
+                    <div class="editor-item">
+                        <div class="editor-name">Rashmi Rajput</div>
+                        <div class="editor-affil">Jawahar Lal Nehru University, New Delhi</div>
+                    </div>
+                    <div class="editor-item">
+                        <div class="editor-name">Dr. Aditya Pratap Sanyal</div>
+                        <div class="editor-affil">Indian Institute of Technology-BHU, Varanasi</div>
+                    <div class="editor-item">
+                        <div class="editor-name">Dr. Subhash Desai</div>
+                        <div class="editor-affil">Aspire Tech Park, Ahmedabad</div>
+                        <div class="editor-name">Dr. Rahul Ramlal Gurpude</div>
+                        <div class="editor-affil">Swaminarayan Siddhanta Institute of Technology, Nagpur</div>
+                    </div>                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- RESEARCH AREAS -->
+<section id="research-areas" class="section bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Research Areas</h2>
+            <p>Multidisciplinary research across science, engineering and technology</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-cpu"></i>
+                    <h5>Computer Science & AI</h5>
+                    <p>Artificial Intelligence, Machine Learning, Data Science, Cybersecurity, IoT and Computing.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-building"></i>
+                    <h5>Engineering & Technology</h5>
+                    <p>Civil, Mechanical, Electrical, Electronics, Chemical and interdisciplinary engineering.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-flask"></i>
+                    <h5>Science & Applied Sciences</h5>
+                    <p>Physics, Chemistry, Mathematics, Environmental Science and applied research.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-leaf"></i>
+                    <h5>Environment & Sustainability</h5>
+                    <p>Climate change, renewable energy, sustainable development, waste management and green technology.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-bar-chart"></i>
+                    <h5>Management & Economics</h5>
+                    <p>Business management, finance, economics, entrepreneurship, marketing and organizational studies.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="research-card">
+                    <i class="bi bi-mortarboard"></i>
+                    <h5>Education & Social Sciences</h5>
+                    <p>Education, psychology, sociology, humanities, social sciences and interdisciplinary studies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SUBMIT PAPER -->
+<section id="submit" class="submission-section">
+    <div class="container text-center">
+        <h2>Submit Your Research</h2>
+        <p class="mt-3 mb-4">Share your original research with the international academic community.</p>
+        <a href="#contact" class="btn btn-primary-custom">Submit Manuscript</a>
+        <a href="#about" class="btn btn-outline-custom">Author Guidelines</a>
+    </div>
+</section>
+
+<!-- LATEST ARTICLES / ARCHIVES -->
+<section id="articles" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Latest Publications</h2>
+            <p>Recently published research articles</p>
+        </div>
+
+        <div class="article-card">
+            <div class="article-meta">IJMSET | Volume 1 | Issue 1 | 2026</div>
+            <h5 class="mt-2">Research Article Title Will Appear Here</h5>
+            <p>Author Name, Author Name, Institution Name</p>
+            <a href="#articles">View Article →</a>
+        </div>
+
+        <div class="article-card">
+            <div class="article-meta">IJMSET | Volume 1 | Issue 1 | 2026</div>
+            <h5 class="mt-2">Interdisciplinary Research and Emerging Technologies</h5>
+            <p>Author Name, Author Name</p>
+            <a href="#articles">View Article →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5>IJMSET</h5>
+                <p>International Journal of Multidisciplinary Science, Engineering & Technology</p>
+                <p>An international peer-reviewed open access research journal.</p>
+            </div>
+
+            <div class="col-md-2">
+                <h5>Journal</h5>
+                <a href="#about">About</a>
+                <a href="#aim-scope">Aim & Scope</a>
+                <a href="#editorial-board">Editorial Board</a>
+                <a href="#articles">Archives</a>
+            </div>
+
+            <div class="col-md-3">
+                <h5>For Authors</h5>
+                <a href="#submit">Submit Manuscript</a>
+                <a href="#about">Author Guidelines</a>
+                <a href="#about">Manuscript Template</a>
+                <a href="#submit">Publication Charges</a>
+            </div>
+
+            <div class="col-md-3">
+                <h5>Contact</h5>
+                <p><i class="bi bi-envelope"></i> ijmset2026@gmail.com</p>
+                <p><i class="bi bi-globe"></i> www.ijmset.in</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © 2027 International Journal of Multidisciplinary Science, Engineering & Technology (IJMSET). All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
